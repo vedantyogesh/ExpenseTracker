@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
           textTheme: ThemeData.light().textTheme.copyWith(
                 title: TextStyle(
                   fontFamily: 'Pacifico',
-                  fontSize: 20.0,
+                  fontSize: 25.0,
                 ),
                 subhead: TextStyle(
                   fontFamily: 'Raleway',
