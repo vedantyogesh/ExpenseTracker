@@ -34,41 +34,27 @@ class TransactionList extends StatelessWidget {
             )
           : ListView.builder(
               itemBuilder: (context, index) {
-                return Container(
-                  child: Card(
-                      child: Row(
-                    children: <Widget>[
-                      Container(
-                        padding: EdgeInsets.all(8.0),
-                        decoration: BoxDecoration(
-                            border: Border.all(
-                                color: Theme.of(context).primaryColor,
-                                width: 2)),
-                        margin: EdgeInsets.symmetric(
-                            vertical: 10.0, horizontal: 15),
-                        child: Text(
-                          '\$ ' + transactions[index].amount.toStringAsFixed(2),
-                          style: Theme.of(context).textTheme.subhead,
-                        ),
-                      ),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: <Widget>[
-                          Text(
-                            transactions[index].title,
-                            style: Theme.of(context).textTheme.title,
+                return Card(
+                  margin: EdgeInsets.symmetric(vertical: 8, horizontal: 9),
+                  elevation: 8,
+                  child: ListTile(
+                    leading: CircleAvatar(
+                        radius: 30,
+                        child: Padding(
+                          padding: const EdgeInsets.all(6.0),
+                          child: FittedBox(
+                            child: Text('\$${transactions[index].amount}'),
                           ),
-                          Text(
-                            DateFormat.yMMMd().format(transactions[index].date),
-                            style: TextStyle(
-                              color: Colors.grey,
-                              fontFamily: 'Pacifico',
-                            ),
-                          )
-                        ],
-                      )
-                    ],
-                  )),
+                        )),
+                    title: Text(
+                      transactions[index].title,
+                      style: Theme.of(context).textTheme.title,
+                    ),
+                    subtitle: Text(
+                      DateFormat.yMMMd().format(transactions[index].date),
+                      style: Theme.of(context).textTheme.subtitle,
+                    ),
+                  ),
                 );
               },
               itemCount: transactions.length,
