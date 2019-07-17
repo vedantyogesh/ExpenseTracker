@@ -16,12 +16,14 @@ class MyApp extends StatelessWidget {
                   fontFamily: 'Pacifico',
                   fontSize: 25.0,
                 ),
-                subhead: TextStyle(
+                subtitle: TextStyle(
                   fontFamily: 'Raleway',
                   fontSize: 22.0,
                 ),
+                button: TextStyle(
+                  color: Colors.white,
+                ),
               ),
-          // brightness: Brightness.dark,
           accentColor: Colors.deepOrange,
           primarySwatch: Colors.purple,
           appBarTheme: AppBarTheme(
